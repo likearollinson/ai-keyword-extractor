@@ -70,13 +70,13 @@ const App = () => {
                     <TextInput extractKeywords={extractKeywords} />
                     <Footer />
                 </Container>
-                <KeywordsModal
-                    isOpen={isOpen}
-                    closeModal={closeModal}
-                    keywords={keywords}
-                    loading={loading}
-                />
             </ChakraProvider>
+            <KeywordsModal
+                isOpen={isOpen}
+                closeModal={closeModal}
+                keywords={keywords}
+                loading={loading}
+            />
         </Box>
     );
 };
