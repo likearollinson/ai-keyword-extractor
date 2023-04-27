@@ -18,9 +18,7 @@ const App = () => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Bearer ${
-                    import.meta.secrets.VITE_OPENAI_API_KEY
-                }`,
+                Authorization: `Bearer ${secrets.VITE_OPENAI_API_KEY}`,
             },
             body: JSON.stringify({
                 model: "text-davinci-003",
@@ -36,10 +34,7 @@ const App = () => {
         };
 
         try {
-            const response = await fetch(
-                import.meta.secrets.VITE_OPENAI_API_URL,
-                options
-            );
+            const response = await fetch(secrets.VITE_OPENAI_API_URL, options);
 
             const json = await response.json();
 
