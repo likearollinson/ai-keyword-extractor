@@ -16,6 +16,9 @@ permissions:
     contents: read
     pages: write
     id-token: write
+    env:
+        VITE_OPENAI_API_KEY: ${{secrets.VITE_OPENAI_API_KEY}}
+        VITE_OPENAI_API_URL: ${{secrets.VITE_OPENAI_API_URL}}
 
 # Allow one concurrent deployment
 concurrency:
@@ -51,7 +54,3 @@ jobs:
             - name: Deploy to GitHub Pages
               id: deployment
               uses: actions/deploy-pages@v1
-            - name: Declare environment variables
-                env:
-                  VITE_OPENAI_API_KEY: ${{secrets.VITE_OPENAI_API_KEY}}
-                  VITE_OPENAI_API_URL: ${{secrets.VITE_OPENAI_API_URL}}
