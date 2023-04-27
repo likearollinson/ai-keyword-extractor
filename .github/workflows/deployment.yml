@@ -16,15 +16,15 @@ permissions:
     contents: read
     pages: write
     id-token: write
-    env:
-        VITE_OPENAI_API_KEY: ${{secrets.VITE_OPENAI_API_KEY}}
-        VITE_OPENAI_API_URL: ${{secrets.VITE_OPENAI_API_URL}}
 
 # Allow one concurrent deployment
 concurrency:
     group: "pages"
     cancel-in-progress: true
 
+env:
+    VITE_OPENAI_API_KEY: ${{secrets.VITE_OPENAI_API_KEY}}
+    VITE_OPENAI_API_URL: ${{secrets.VITE_OPENAI_API_URL}}
 jobs:
     # Single deploy job since we're just deploying
     deploy:
