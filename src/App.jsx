@@ -4,7 +4,6 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import TextInput from './components/TextInput';
 import KeywordsModal from './components/KeywordsModal';
-import theme from './theme';
 
 const App = () => {
     const [keywords, setKeywords] = useState('');
@@ -64,13 +63,11 @@ const App = () => {
             width='100vw'
             paddingTop={130}
         >
-            <ChakraProvider theme={theme}>
-                <Container maxW='3xl' centerContent>
-                    <Header />
-                    <TextInput extractKeywords={extractKeywords} />
-                    <Footer />
-                </Container>
-            </ChakraProvider>
+            <Container maxW='3xl' centerContent>
+                <Header />
+                <TextInput extractKeywords={extractKeywords} />
+                <Footer />
+            </Container>
             <KeywordsModal
                 isOpen={isOpen}
                 closeModal={closeModal}
