@@ -24,7 +24,7 @@ const App = () => {
             body: JSON.stringify({
                 model: 'text-davinci-003',
                 prompt:
-                    'Extract keywords from this text. Make the first letter of each word uppercase and separate each keyword with commas.\n\n' +
+                    'Extract keywords or key-phrases from this text. Keywords are single words and key-phrases are more than one word but less than three words. Make the first letter of each word uppercase and separate each keyword or key-phrase with a comma.\n\n' +
                     text +
                     '',
                 temperature: 0.5,
