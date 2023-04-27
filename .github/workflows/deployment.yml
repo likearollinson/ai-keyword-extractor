@@ -22,10 +22,6 @@ concurrency:
     group: "pages"
     cancel-in-progress: true
 
-env:
-    VITE_OPENAI_API_KEY: ${{secrets.VITE_OPENAI_API_KEY}}
-    VITE_OPENAI_API_URL: ${{secrets.VITE_OPENAI_API_URL}}
-
 jobs:
     # Single deploy job since we're just deploying
     deploy:
@@ -55,3 +51,7 @@ jobs:
             - name: Deploy to GitHub Pages
               id: deployment
               uses: actions/deploy-pages@v1
+            - name: Declare environment variables
+                env:
+                  VITE_OPENAI_API_KEY: ${{secrets.VITE_OPENAI_API_KEY}}
+                  VITE_OPENAI_API_URL: ${{secrets.VITE_OPENAI_API_URL}}
