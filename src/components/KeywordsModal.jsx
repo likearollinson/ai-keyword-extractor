@@ -25,7 +25,10 @@ const KeywordsModal = ({ keywords, loading, isOpen, closeModal }) => {
                         justifyContent='center'
                     >
                         {loading ? (
-                            <CircularProgress />
+                            <CircularProgress
+                                isIndeterminate
+                                color='blue.200'
+                            />
                         ) : (
                             <Text>{keywords}</Text>
                         )}
